@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% block title %}Details{% endblock %}
+{% block body %}
+<!-- defining navbar for the form page where person's detail can be filled -->
+<nav class="navbar navbar-dark bg-dark">
+	<ul class="navbar-brand"><u><b>Quiz Form</b></u></ul>
+</nav>
+
+<!-- Form for taking detail form the user(candidate) -->
+<form style="width: 500px; margin: auto;" class="needs-validation" method="post" novalidate>
+	<!-- 'Name' field of the form -->
+	<div class="form-group">
+		<label for="Name"><b>Name</b></label>
+		<input type="text" name="name" id="Name" class="form-control" required>
+		<div class="invalid-feedback">Fill in this Field.</div>
+	</div>
+	<!-- 'Email' field of the form -->
+	<div class="form-group">
+		<label for="Email"><b>Email</b></label>
+		<input type="text" name="email" id="Email"class="form-control" required>
+		<div class="invalid-feedback">Fill in this Field.</div>
+	</div>
+	<!-- 'choose time' field of the form -->
+	<div class="form-group">
+		<label for="Host"><b>Time for Quiz</b></label>
+		<select name="host" id="host" class="form-control" required>
+			<option>5 minutes</option>
+			<option>10 minutes</option>
+			<option>15 minutes</option>
+			<option>20 minutes</option>
+			<option>25 minutes</option>
+			<option>30 minutes</option>
+		</select>
+		<div class="invalid-feedback">Fill in this Field.</div>
+	</div>
+	<!-- defining checkbox -->
+	<div class="form-check">
+		<input type="checkbox" name="terms" class="form-check-input" required>
+		<label><b>Accept Terms &amp; Conditions</b></label>
+		<div class="invalid-feedback">Tick this box.</div>
+	</div>
+	<!-- adding 'submit' button to the form -->
+	<input type="submit" name="Submit" class="btn btn-success" value="Start Quiz">
+
+</form>
+
+<!-- To Validate Form On Run-Time -->
+<script type="text/javascript">
+		
+	var form = document.querySelector('.needs-validation');
+	form.addEventListener('submit', function(event){
+		if(form.checkValidity() === false) {
+			event.preventDefault();
+			event.stopPropagation();
+		}
+		form.classList.add('was-validated');
+	})
+
+</script>
+{% endblock %}

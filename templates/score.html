@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block title %}Score-Card{% endblock %}
+{% block body %}
+	<div class="jumbotron jumbotron-fluid">
+  		<div class="container">
+    		<h1 class="display-4">{{ name }}</h1> <!-- shows name of the candidate -->
+    		<p class="lead">Your score for the practice quiz is <b><b><u>{{ score }}</u></b></b>.</p> <!-- shows the score of the candidate -->
+  		</div>
+	</div>
+{% endblock %}

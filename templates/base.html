@@ -1,0 +1,16 @@
+<!-- Extandeds in all 'html' templates for making easier code -->
+<!DOCTYPE html>
+<html>
+<head>
+	<title>{% block title %}{% endblock %}</title> <!-- defining 'title block' in base html -->
+	<!-- adding 'favicon' for the website -->
+	<link rel='shortcut icon' href="{{ url_for('static', filename='images/favicon.ico') }}" type='image/x-icon' />
+	<!-- Adding 'bootstrap 4 cdn' to give designing to thr pages -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+	<!-- defining 'body block' in base html -->
+    {% block body %}
+    {% endblock %}
+</body>
+</html>
